@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct _D_Spatial_Audio_TestingApp: App {
+struct SpatialAudioTestingApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

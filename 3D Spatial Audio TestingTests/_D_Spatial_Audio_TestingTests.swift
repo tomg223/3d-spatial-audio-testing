@@ -5,13 +5,22 @@
 //  Created by Tom Gansa on 2/20/25.
 //
 
-import Testing
+import XCTest
 @testable import _D_Spatial_Audio_Testing
 
-struct _D_Spatial_Audio_TestingTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+final class SpatialAudioTestingTests: XCTestCase {
+    var audioPlayer: SpatialAudioPlayer!
+    
+    override func setUpWithError() throws {
+        audioPlayer = SpatialAudioPlayer()
     }
-
+    
+    override func tearDownWithError() throws {
+        audioPlayer.stopAllAudio()
+        audioPlayer = nil
+    }
+    
+    func testSpatialAudioPlayerInitialization() throws {
+        XCTAssertNotNil(audioPlayer)
+    }
 }
